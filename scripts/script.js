@@ -8,27 +8,33 @@ const modalAdd = document.querySelector('.modal__add'),
     modalItem = document.querySelector('.modal__item');
 
 
-//Open and close AddAd
+//Open AddAd
 addAd.addEventListener('click', () => {
     modalAdd.classList.remove('hide');
     modalBtnSubmit.disabled = true;
 });
 
+
+//Close AddAd
 modalAdd.addEventListener('click', event => {
     const target = event.target;
-    if (target.classList.contains('modal__close') || (target === modalAdd)) {
+    if (target.closest('.modal__close') || (target === modalAdd)) {
         modalAdd.classList.add('hide');
         modalSubmit.reset();
     }
 })
 
 
-//Open and close OneItem
-catalog.addEventListener('click', () => {
-    modalItem.classList.remove('hide');
+//Open OneItem
+catalog.addEventListener('click', event => {
+    const target = event.target;
+    if (target.closest('.card')){
+        modalItem.classList.remove('hide');
+    }
 })
 
 
+//Close OneItem
 modalItem.addEventListener('click', event => {
     const target = event.target;
     if (target.closest('.modal__close') || (target === modalItem)) {

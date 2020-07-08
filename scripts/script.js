@@ -44,7 +44,7 @@ modalItem.addEventListener('click', event => {
 
 
 //Open and close AddAd and OneItem when press Escape
-document.addEventListener('keydown', event => {
+document.body.addEventListener('keydown', event => {
     const key = event.key;
     if (key === "Escape") {
         modalAdd.classList.add('hide');

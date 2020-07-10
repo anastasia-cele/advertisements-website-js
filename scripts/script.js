@@ -64,7 +64,7 @@ const closeModal = event => {
 const renderCard = (DB = dataBase) => {
     catalog.textContent = '';
     DB.forEach((item) => {
-        catalog.insertAdjacentHTML('beforebegin', `
+        catalog.insertAdjacentHTML('beforeend', `
             <li class="card" data-id-item="${item.id}">
                 <img class="card__image" src = "data:image/jpeg;base64,${item.image}" alt="test">
                 <div class="card__description">

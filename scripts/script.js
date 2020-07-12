@@ -141,7 +141,7 @@ catalog.addEventListener('click', event => {
     const target = event.target;
     const card = target.closest('.card')
     if (card){
-        const item = dataBase.find(obj => obj.id === +card.dataset.id);
+        const item = dataBase.find(obj => obj.id === +card.dataset.idItem);
         modalImageItem.src = `data:image/jpeg;base64,${item.image}`;
         modalHeaderItem.textContent = item.nameItem;
         modalStatusItem.textContent = item.status === 'new' ? 'New' : 'Old';
